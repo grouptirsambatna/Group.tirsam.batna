@@ -4,293 +4,187 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Group TIRSAM Batna</title>
+<title>GROUP TIRSAM BATNA</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#f4f7f5;
-    color:#123d35;
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f4;
+    color: #222;
 }
 
-/* HEADER */
-header{
-    background:#086153;
-    color:white;
-    padding:15px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 12px rgba(0,0,0,.2);
+header {
+    background: #087f23;
+    color: white;
+    padding: 18px;
+    text-align: center;
 }
 
-.logo{
-    font-size:25px;
-    font-weight:bold;
-    letter-spacing:1px;
+header h1 {
+    font-size: 28px;
 }
 
-.logo span{
-    color:#b8e6d9;
+header p {
+    margin-top: 5px;
 }
 
-/* HERO */
-.hero{
-    min-height:500px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-    padding:50px 20px;
+.hero {
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 15px;
 
     background:
-    linear-gradient(rgba(0,45,38,.70),rgba(0,45,38,.70)),
-    url("https://tirsam.com/wp-content/uploads/2025/09/DIV-42.jpg");
-
-    background-size:cover;
-    background-position:center;
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("images/tirsam-bg.jpg") center/cover;
 }
 
-.hero-content{
-    max-width:850px;
+.hero h2 {
+    color: white;
+    font-size: 38px;
 }
 
-.hero h1{
-    font-size:52px;
-    margin-bottom:20px;
+.hero p {
+    color: white;
+    font-size: 19px;
+    margin-top: 15px;
 }
 
-.hero p{
-    font-size:22px;
-    line-height:1.6;
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
-.hero-btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:15px 30px;
-    background:#ffffff;
-    color:#086153;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
+.models {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
-/* MODELS */
-.models{
-    padding:60px 5%;
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,.12);
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
 }
 
-.section-title h2{
-    font-size:36px;
-    color:#086153;
+.card-content {
+    padding: 20px;
 }
 
-.section-title p{
-    margin-top:10px;
-    color:#555;
+.card h3 {
+    color: #087f23;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
-    max-width:1100px;
-    margin:auto;
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-.card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
-    transition:.3s;
+.btn {
+    display: block;
+    background: #087f23;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 13px;
+    border-radius: 8px;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.form-box {
+    background: white;
+    padding: 25px;
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
 }
 
-.card img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    display:block;
+.form-box h2 {
+    color: #087f23;
+    margin-bottom: 20px;
 }
 
-.card-content{
-    padding:25px;
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
-.card h3{
-    font-size:25px;
-    color:#086153;
-    margin-bottom:10px;
+textarea {
+    min-height: 100px;
 }
 
-.price{
-    font-size:24px;
-    font-weight:bold;
-    color:#222;
-    margin:15px 0;
+.submit {
+    width: 100%;
+    border: none;
+    background: #087f23;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.card-btn{
-    display:block;
-    text-align:center;
-    background:#086153;
-    color:white;
-    padding:13px;
-    border-radius:7px;
-    text-decoration:none;
-    font-weight:bold;
+.whatsapp {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 28px;
+    z-index: 999;
 }
 
-/* FORM */
-.form-section{
-    background:#086153;
-    padding:60px 20px;
+footer {
+    background: #075d1b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
 }
 
-.form-box{
-    background:white;
-    max-width:700px;
-    margin:auto;
-    padding:35px;
-    border-radius:15px;
-    box-shadow:0 5px 25px rgba(0,0,0,.2);
-}
-
-.form-box h2{
-    text-align:center;
-    color:#086153;
-    margin-bottom:25px;
-}
-
-.form-group{
-    margin-bottom:17px;
-}
-
-.form-group label{
-    display:block;
-    margin-bottom:7px;
-    font-weight:bold;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-    width:100%;
-    padding:13px;
-    border:1px solid #ccc;
-    border-radius:7px;
-    font-size:16px;
-}
-
-.form-group textarea{
-    min-height:120px;
-    resize:vertical;
-}
-
-.submit-btn{
-    width:100%;
-    border:none;
-    background:#086153;
-    color:white;
-    padding:15px;
-    font-size:18px;
-    font-weight:bold;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.submit-btn:hover{
-    background:#064d43;
-}
-
-/* FOOTER */
-footer{
-    background:#063f36;
-    color:white;
-    text-align:center;
-    padding:25px 15px;
-}
-
-footer p{
-    margin:7px;
-}
-
-/* WHATSAPP */
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#25D366;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:30px;
-    box-shadow:0 4px 15px rgba(0,0,0,.3);
-    z-index:2000;
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
-    header{
-        padding:14px 20px;
+@media (max-width: 700px) {
+    .models {
+        grid-template-columns: 1fr;
     }
 
-    .logo{
-        font-size:20px;
+    .hero h2 {
+        font-size: 28px;
     }
 
-    .hero{
-        min-height:430px;
-    }
-
-    .hero h1{
-        font-size:36px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .card img{
-        height:230px;
-    }
-
-    .section-title h2{
-        font-size:30px;
-    }
-
-    .form-box{
-        padding:25px 18px;
+    .card img {
+        height: 220px;
     }
 }
 </style>
@@ -299,373 +193,143 @@ footer p{
 <body>
 
 <header>
-    <div class="logo">
-        <span>TIRSAM</span> GROUP
-    </div>
-
-    <div>
-        BATNA
-    </div>
+    <h1>GROUP TIRSAM BATNA</h1>
+    <p>Véhicules utilitaires TIRSAM</p>
 </header>
 
-
-<!-- HERO -->
 <section class="hero">
-
-    <div class="hero-content">
-
-        <h1>GROUP TIRSAM BATNA</h1>
-
-        <p>
-            La nouvelle génération de camions est en route
-        </p>
-
-        <p>
-            شاحنات TIRSAM لجميع احتياجات النقل
-        </p>
-
-        <a href="#models" class="hero-btn">
-            Découvrir nos modèles
-        </a>
-
+    <div>
+        <h2>TIRSAM – BATNA</h2>
+        <p>Découvrez nos véhicules utilitaires</p>
     </div>
-
 </section>
 
+<div class="container">
 
-<!-- MODELS -->
-<section class="models" id="models">
-
-    <div class="section-title">
-
-        <h2>Nos modèles</h2>
-
-        <p>
-            Découvrez notre gamme de véhicules TIRSAM
-        </p>
-
-    </div>
-
-
-    <div class="grid">
-
+    <div class="models">
 
         <!-- SIMPLE CABINE -->
         <div class="card">
-
-            <img
-            src="https://tirsam.com/wp-content/uploads/2025/11/2-scaled.avif"
-            alt="TIRSAM Simple Cabine">
-
+            <img src="images/simple-cabine.jpg" alt="TIRSAM Simple Cabine">
             <div class="card-content">
-
                 <h3>🚚 Simple Cabine</h3>
-
-                <p>
-                    شاحنة صغيرة بكابينة واحدة
-                </p>
-
-                <div class="price">
-                    185 مليون DA
-                </div>
-
-                <a href="#form" class="card-btn">
-                    Demander ce modèle
-                </a>
-
+                <div class="price">185 millions DA</div>
+                <a class="btn" href="#commande">Commander</a>
             </div>
-
         </div>
-
 
         <!-- DOUBLE CABINE -->
         <div class="card">
-
-            <img
-            src="https://tirsam.com/wp-content/uploads/2025/11/1-scaled.avif"
-            alt="TIRSAM Double Cabine">
-
+            <img src="images/double-cabine.jpg" alt="TIRSAM Double Cabine">
             <div class="card-content">
-
                 <h3>🚚 Double Cabine</h3>
-
-                <p>
-                    شاحنة صغيرة بكابينة مزدوجة
-                </p>
-
-                <div class="price">
-                    225 مليون DA
-                </div>
-
-                <a href="#form" class="card-btn">
-                    Demander ce modèle
-                </a>
-
+                <div class="price">225 millions DA</div>
+                <a class="btn" href="#commande">Commander</a>
             </div>
-
         </div>
 
-
-        <!-- 3.5 T -->
+        <!-- 3.5 TONNES -->
         <div class="card">
-
-            <img
-            src="https://tirsam.com/wp-content/uploads/2025/09/DIV-42.jpg"
-            alt="TIRSAM 3.5 T">
-
+            <img src="images/3-5t.jpg" alt="TIRSAM 3.5 T">
             <div class="card-content">
-
-                <h3>🚛 Camion 3.5 T</h3>
-
-                <p>
-                    شاحنة 3.5 طن
-                </p>
-
-                <div class="price">
-                    390 مليون DA
-                </div>
-
-                <a href="#form" class="card-btn">
-                    Demander ce modèle
-                </a>
-
+                <h3>🚛 3.5 T</h3>
+                <div class="price">390 millions DA</div>
+                <a class="btn" href="#commande">Commander</a>
             </div>
-
         </div>
 
-
-        <!-- 6 T -->
+        <!-- 6 TONNES -->
         <div class="card">
-
-            <img
-            src="https://i0.wp.com/www.auto-utilitaire.com/wp-content/uploads/2025/11/TIRSAM-Algerie.jpg?fit=750%2C384&ssl=1"
-            alt="TIRSAM 6 T">
-
+            <img src="images/6t.jpg" alt="TIRSAM 6 T">
             <div class="card-content">
-
-                <h3>🚛 Camion 6 T</h3>
-
-                <p>
-                    شاحنة 6 طن
-                </p>
-
-                <div class="price">
-                    460 مليون DA
-                </div>
-
-                <a href="#form" class="card-btn">
-                    Demander ce modèle
-                </a>
-
+                <h3>🚛 6 T</h3>
+                <div class="price">460 millions DA</div>
+                <a class="btn" href="#commande">Commander</a>
             </div>
-
         </div>
 
     </div>
 
-</section>
+    <div class="form-box" id="commande">
 
+        <h2>📋 Demande d'information</h2>
 
-<!-- FORM -->
-<section class="form-section" id="form">
+        <form onsubmit="sendWhatsApp(event)">
 
-    <div class="form-box">
+            <input id="nom" type="text" placeholder="Nom et prénom" required>
 
-        <h2>
-            Demande de réservation
-        </h2>
+            <input id="telephone" type="tel" placeholder="Téléphone" required>
 
-        <form id="whatsappForm">
+            <input id="wilaya" type="text" placeholder="Wilaya" required>
 
-            <div class="form-group">
-                <label>Nom et prénom</label>
+            <input id="adresse" type="text" placeholder="Adresse">
 
-                <input
-                type="text"
-                id="name"
-                required
-                placeholder="Votre nom et prénom">
-            </div>
+            <select id="modele" required>
+                <option value="">Choisir le véhicule</option>
+                <option>Simple Cabine - 185 millions</option>
+                <option>Double Cabine - 225 millions</option>
+                <option>3.5 T - 390 millions</option>
+                <option>6 T - 460 millions</option>
+            </select>
 
+            <select id="paiement" required>
+                <option value="">Mode de paiement</option>
+                <option>Comptant</option>
+                <option>Crédit / facilité de paiement</option>
+            </select>
 
-            <div class="form-group">
+            <textarea id="message" placeholder="Votre message"></textarea>
 
-                <label>Téléphone</label>
-
-                <input
-                type="tel"
-                id="phone"
-                required
-                placeholder="Votre numéro">
-            </div>
-
-
-            <div class="form-group">
-
-                <label>Wilaya</label>
-
-                <input
-                type="text"
-                id="wilaya"
-                required
-                placeholder="Votre wilaya">
-            </div>
-
-
-            <div class="form-group">
-
-                <label>Commune</label>
-
-                <input
-                type="text"
-                id="commune"
-                placeholder="Votre commune">
-            </div>
-
-
-            <div class="form-group">
-
-                <label>Modèle souhaité</label>
-
-                <select id="model" required>
-
-                    <option value="">
-                        Choisir un modèle
-                    </option>
-
-                    <option value="Simple Cabine - 185 millions">
-                        Simple Cabine — 185 millions
-                    </option>
-
-                    <option value="Double Cabine - 225 millions">
-                        Double Cabine — 225 millions
-                    </option>
-
-                    <option value="3.5 T - 390 millions">
-                        3.5 T — 390 millions
-                    </option>
-
-                    <option value="6 T - 460 millions">
-                        6 T — 460 millions
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>Message</label>
-
-                <textarea
-                id="message"
-                placeholder="Votre demande"></textarea>
-
-            </div>
-
-
-            <button
-            type="submit"
-            class="submit-btn">
-
-                📲 Envoyer par WhatsApp
-
+            <button class="submit" type="submit">
+                Envoyer par WhatsApp
             </button>
 
         </form>
 
     </div>
 
-</section>
+</div>
 
-
-<!-- FOOTER -->
-<footer>
-
-    <p>
-        <strong>GROUP TIRSAM BATNA</strong>
-    </p>
-
-    <p>
-        📍 Batna - Algérie
-    </p>
-
-    <p>
-        📞 0564095631
-    </p>
-
-</footer>
-
-
-<!-- WHATSAPP BUTTON -->
-<a
-href="https://wa.me/213564095631"
-class="whatsapp"
-target="_blank">
-
+<a class="whatsapp"
+   href="https://wa.me/213564095631"
+   target="_blank">
     ☎
-
 </a>
 
+<footer>
+    <h3>GROUP TIRSAM BATNA</h3>
+    <p>Batna – Aïn Touta</p>
+    <p>📞 0564095631</p>
+</footer>
 
 <script>
+function sendWhatsApp(event) {
 
-const form = document.getElementById("whatsappForm");
+    event.preventDefault();
 
-form.addEventListener("submit", function(e){
+    let nom = document.getElementById("nom").value;
+    let telephone = document.getElementById("telephone").value;
+    let wilaya = document.getElementById("wilaya").value;
+    let adresse = document.getElementById("adresse").value;
+    let modele = document.getElementById("modele").value;
+    let paiement = document.getElementById("paiement").value;
+    let message = document.getElementById("message").value;
 
-    e.preventDefault();
-
-    const name =
-    document.getElementById("name").value;
-
-    const phone =
-    document.getElementById("phone").value;
-
-    const wilaya =
-    document.getElementById("wilaya").value;
-
-    const commune =
-    document.getElementById("commune").value;
-
-    const model =
-    document.getElementById("model").value;
-
-    const message =
-    document.getElementById("message").value;
-
-
-    const text =
-
-`🚛 GROUP TIRSAM BATNA
-
-👤 Nom et prénom : ${name}
-
-📞 Téléphone : ${phone}
-
-📍 Wilaya : ${wilaya}
-
-🏙️ Commune : ${commune}
-
-🚚 Modèle demandé : ${model}
-
-📝 Message :
-${message}`;
-
-
-    const whatsappURL =
-    "https://wa.me/213564095631?text="
-    + encodeURIComponent(text);
-
+    let text =
+        "🚚 DEMANDE TIRSAM%0A%0A" +
+        "👤 Nom : " + encodeURIComponent(nom) + "%0A" +
+        "📞 Téléphone : " + encodeURIComponent(telephone) + "%0A" +
+        "📍 Wilaya : " + encodeURIComponent(wilaya) + "%0A" +
+        "🏠 Adresse : " + encodeURIComponent(adresse) + "%0A" +
+        "🚛 Véhicule : " + encodeURIComponent(modele) + "%0A" +
+        "💰 Paiement : " + encodeURIComponent(paiement) + "%0A" +
+        "📝 Message : " + encodeURIComponent(message);
 
     window.open(
-        whatsappURL,
+        "https://wa.me/213564095631?text=" + text,
         "_blank"
     );
-
-});
-
+}
 </script>
 
 </body>
