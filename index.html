@@ -1,484 +1,792 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GROUP TIRSAM BATNA</title>
+<title>GROUP TIRSAM BATNA</title>
 
-    <meta name="description"
-          content="GROUP TIRSAM BATNA - بيع شاحنات TIRSAM في باتنة">
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Tahoma,sans-serif;
+}
 
-    <link rel="stylesheet" href="style.css">
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#061008;
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(2,15,7,.96);
+    border-bottom:1px solid #20b956;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    min-height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 20px;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#25c95b;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-right:22px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#25c95b;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    padding:120px 20px 60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.60),
+        rgba(2,20,8,.93)
+    ),
+    url("https://tirsam.com/wp-content/uploads/2025/11/2-scaled.avif");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:58px;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:#25c95b;
+}
+
+.hero p{
+    margin:22px 0;
+    font-size:21px;
+    line-height:1.8;
+    color:#ddd;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 28px;
+    margin:6px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.green{
+    background:#25c95b;
+    color:#031007;
+}
+
+.outline{
+    border:1px solid #25c95b;
+    color:white;
+}
+
+/* SECTIONS */
+section{
+    padding:85px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:38px;
+}
+
+.title span{
+    color:#25c95b;
+}
+
+.title p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+/* TRUCKS */
+.trucks{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#0d1c11;
+    border:1px solid #1c4728;
+    border-radius:14px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#25c95b;
+}
+
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-body{
+    padding:22px;
+}
+
+.card h3{
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.type{
+    color:#aaa;
+}
+
+.price{
+    color:#25c95b;
+    font-size:27px;
+    font-weight:900;
+    margin:18px 0;
+}
+
+.card button{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:7px;
+    background:#25c95b;
+    color:#031007;
+    font-size:17px;
+    font-weight:bold;
+}
+
+/* ABOUT */
+.about{
+    background:
+    linear-gradient(
+        rgba(2,15,7,.91),
+        rgba(2,15,7,.97)
+    ),
+    url("https://tirsam.com/wp-content/uploads/2025/11/2-scaled.avif");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.about-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about h2 span{
+    color:#25c95b;
+}
+
+.about p{
+    color:#ddd;
+    line-height:2;
+    font-size:18px;
+}
+
+/* FORM */
+.form-section{
+    background:#030704;
+}
+
+.form-box{
+    max-width:700px;
+    margin:auto;
+    background:#0d1c11;
+    border:1px solid #1c4728;
+    border-radius:15px;
+    padding:30px;
+}
+
+.form-box h3{
+    text-align:center;
+    font-size:27px;
+    margin-bottom:25px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:7px;
+    border:1px solid #31563b;
+    background:#061008;
+    color:white;
+    font-size:16px;
+}
+
+textarea{
+    height:120px;
+    resize:none;
+}
+
+.form-box button{
+    width:100%;
+    padding:16px;
+    border:0;
+    border-radius:7px;
+    background:#25c95b;
+    color:#031007;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px 20px;
+    background:#020503;
+    border-top:1px solid #1c4728;
+}
+
+footer strong{
+    color:#25c95b;
+}
+
+footer p{
+    margin:8px;
+    color:#aaa;
+}
+
+/* WHATSAPP RIGHT */
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    background:#25D366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-decoration:none;
+    font-size:29px;
+    z-index:2000;
+    box-shadow:0 5px 25px rgba(0,0,0,.5);
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .title h2{
+        font-size:30px;
+    }
+
+    section{
+        padding:65px 15px;
+    }
+}
+</style>
 </head>
+
 
 <body>
 
-<header class="header">
+<header>
 
-    <div class="container nav">
+<div class="nav">
 
-        <div class="logo">
-            <span>GROUP</span>
-            TIRSAM
-            <small>BATNA</small>
-        </div>
+<div class="logo">
+GROUP <span>TIRSAM BATNA</span>
+</div>
 
-        <nav>
-            <a href="#home">الرئيسية</a>
-            <a href="#trucks">الشاحنات</a>
-            <a href="#about">عن المجموعة</a>
-            <a href="#contact">اتصل بنا</a>
-        </nav>
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#trucks">الشاحنات</a>
+<a href="#reservation">التسجيل</a>
+<a href="#contact">اتصل بنا</a>
+</nav>
 
-        <a class="phone" href="tel:0564095631">
-            📞 0564 09 56 31
-        </a>
-
-    </div>
+</div>
 
 </header>
 
 
-<main>
-
 <!-- HERO -->
+<section class="hero" id="home">
 
-<section id="home" class="hero">
+<div>
 
-    <div class="hero-content">
+<h1>
+GROUP <span>TIRSAM BATNA</span>
+</h1>
 
-        <span class="badge">
-            GROUP TIRSAM BATNA
-        </span>
+<p>
+🚚 شاحنات TIRSAM<br>
+قوة • جودة • ثقة
+</p>
 
-        <h1>
-            شاحنات قوية
-            <br>
-            <span>لأعمالك القادمة</span>
-        </h1>
+<a href="#trucks" class="btn green">
+شاهد الشاحنات
+</a>
 
-        <p>
-            اكتشف مجموعة شاحنات TIRSAM المتوفرة
-            بأسعار مناسبة وموديلات مختلفة.
-        </p>
+<a href="#reservation" class="btn outline">
+سجل طلبك
+</a>
 
-        <div class="hero-buttons">
-
-            <a href="#trucks" class="btn">
-                اكتشف الشاحنات
-            </a>
-
-            <a href="#register" class="btn-outline">
-                سجّل طلبك
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- TRUCKS -->
+<section id="trucks">
 
-<section id="trucks" class="trucks section">
+<div class="container">
 
-    <div class="container">
+<div class="title">
 
-        <div class="section-title">
+<h2>
+شاحنات <span>TIRSAM</span>
+</h2>
 
-            <span>NOTRE GAMME</span>
+<p>
+اختر الشاحنة المناسبة لنشاطك
+</p>
 
-            <h2>
-                شاحنات TIRSAM
-            </h2>
+</div>
 
-            <p>
-                اختر الشاحنة المناسبة لنشاطك
-            </p>
 
-        </div>
+<div class="trucks">
 
 
-        <div class="truck-grid">
+<!-- SIMPLE -->
+<div class="card">
 
+<img
+src="https://tirsam.com/wp-content/uploads/2025/11/2-scaled.avif"
+alt="TIRSAM Simple Cabine">
 
-            <!-- SIMPLE -->
+<div class="card-body">
 
-            <article class="truck-card">
+<h3>🚚 Simple Cabine</h3>
 
-                <div class="truck-image">
+<p class="type">
+Cabine simple
+</p>
 
-                    <img
-                        src="https://tirsam.com/wp-content/uploads/2025/09/simple-cabine.png"
-                        alt="TIRSAM Simple Cabine"
-                        onerror="this.src='https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=1000&q=80'">
+<div class="price">
+185 مليون
+</div>
 
-                    <span class="category">
-                        CAMIONNETTE
-                    </span>
+<button onclick="chooseTruck('Simple Cabine - 185 مليون')">
+احجز الآن
+</button>
 
-                </div>
+</div>
+</div>
 
-                <div class="truck-info">
 
-                    <h3>
-                        TIRSAM Simple Cabine
-                    </h3>
+<!-- DOUBLE -->
+<div class="card">
 
-                    <p>
-                        شاحنة صغيرة بكابينة واحدة
-                    </p>
+<img
+src="https://tirsam.com/wp-content/uploads/2025/11/3-scaled.avif"
+alt="TIRSAM Double Cabine"
+onerror="this.src='https://tirsam.com/wp-content/uploads/2025/11/2-scaled.avif'">
 
-                    <div class="price">
-                        185 مليون سنتيم
-                    </div>
+<div class="card-body">
 
-                    <button
-                        onclick="selectTruck('TIRSAM Simple Cabine')">
-                        اطلب الآن
-                    </button>
+<h3>🚚 Double Cabine</h3>
 
-                </div>
+<p class="type">
+Cabine double
+</p>
 
-            </article>
+<div class="price">
+225 مليون
+</div>
 
+<button onclick="chooseTruck('Double Cabine - 225 مليون')">
+احجز الآن
+</button>
 
-            <!-- DOUBLE -->
+</div>
+</div>
 
-            <article class="truck-card">
 
-                <div class="truck-image">
+<!-- 3.5 -->
+<div class="card">
 
-                    <img
-                        src="https://tirsam.com/wp-content/uploads/2025/09/double-cabine.png"
-                        alt="TIRSAM Double Cabine"
-                        onerror="this.src='https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=1000&q=80'">
+<img
+src="https://tirsam.com/wp-content/uploads/2025/11/4-scaled.avif"
+alt="TIRSAM 3.5 T"
+onerror="this.src='https://tirsam.com/wp-content/uploads/2025/11/2-scaled.avif'">
 
-                    <span class="category">
-                        CAMIONNETTE
-                    </span>
+<div class="card-body">
 
-                </div>
+<h3>🚛 3.5 T</h3>
 
-                <div class="truck-info">
+<p class="type">
+Camion 3.5 tonnes
+</p>
 
-                    <h3>
-                        TIRSAM Double Cabine
-                    </h3>
+<div class="price">
+390 مليون
+</div>
 
-                    <p>
-                        شاحنة صغيرة بكابينة مزدوجة
-                    </p>
+<button onclick="chooseTruck('3.5 T - 390 مليون')">
+احجز الآن
+</button>
 
-                    <div class="price">
-                        225 مليون سنتيم
-                    </div>
+</div>
+</div>
 
-                    <button
-                        onclick="selectTruck('TIRSAM Double Cabine')">
-                        اطلب الآن
-                    </button>
 
-                </div>
+<!-- 6 -->
+<div class="card">
 
-            </article>
+<img
+src="https://tirsam.com/wp-content/uploads/2025/11/5-scaled.avif"
+alt="TIRSAM 6 T"
+onerror="this.src='https://tirsam.com/wp-content/uploads/2025/11/2-scaled.avif'">
 
+<div class="card-body">
 
-            <!-- 3.5 T -->
+<h3>🚛 6 T</h3>
 
-            <article class="truck-card featured">
+<p class="type">
+Camion 6 tonnes
+</p>
 
-                <div class="truck-image">
+<div class="price">
+460 مليون
+</div>
 
-                    <img
-                        src="https://tirsam.com/wp-content/uploads/2025/09/camion-3-5-tonnes.png"
-                        alt="TIRSAM 3.5 Tonnes"
-                        onerror="this.src='https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=1000&q=80'">
+<button onclick="chooseTruck('6 T - 460 مليون')">
+احجز الآن
+</button>
 
-                    <span class="category">
-                        CAMION
-                    </span>
+</div>
+</div>
 
-                </div>
 
-                <div class="truck-info">
+</div>
 
-                    <h3>
-                        TIRSAM 3.5 T
-                    </h3>
-
-                    <p>
-                        شاحنة 3.5 طن
-                    </p>
-
-                    <div class="price">
-                        390 مليون سنتيم
-                    </div>
-
-                    <button
-                        onclick="selectTruck('TIRSAM 3.5 T')">
-                        اطلب الآن
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- 6 T -->
-
-            <article class="truck-card featured">
-
-                <div class="truck-image">
-
-                    <img
-                        src="https://tirsam.com/wp-content/uploads/2025/09/camion-6-tonnes.png"
-                        alt="TIRSAM 6 Tonnes"
-                        onerror="this.src='https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1000&q=80'">
-
-                    <span class="category">
-                        CAMION
-                    </span>
-
-                </div>
-
-                <div class="truck-info">
-
-                    <h3>
-                        TIRSAM 6 T
-                    </h3>
-
-                    <p>
-                        شاحنة 6 طن
-                    </p>
-
-                    <div class="price">
-                        460 مليون سنتيم
-                    </div>
-
-                    <button
-                        onclick="selectTruck('TIRSAM 6 T')">
-                        اطلب الآن
-                    </button>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- ABOUT -->
+<section class="about">
 
-<section id="about" class="about section">
+<div class="container">
 
-    <div class="container about-box">
+<div class="about-box">
 
-        <div>
+<h2>
+GROUP <span>TIRSAM BATNA</span>
+</h2>
 
-            <span class="green-title">
-                GROUP TIRSAM BATNA
-            </span>
+<p>
+نقدم لكم شاحنات TIRSAM الجديدة بمختلف
+الأحجام لتلبية احتياجات النقل والعمل.
+</p>
 
-            <h2>
-                الجودة والقوة
-                <br>
-                في خدمة نشاطك
-            </h2>
+<br>
 
-        </div>
+<p>
+🌐 group.tirsam.batna
+</p>
 
-        <p>
-            نوفر لكم مجموعة من شاحنات TIRSAM المناسبة
-            للنقل والأعمال المهنية، مع إمكانية التواصل
-            المباشر معنا لتقديم الطلب والاستفسار عن
-            التفاصيل.
-        </p>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- REGISTER -->
+<!-- RESERVATION -->
+<section class="form-section" id="reservation">
 
-<section id="register" class="register section">
+<div class="container">
 
-    <div class="container">
+<div class="title">
 
-        <div class="section-title">
+<h2>
+تسجيل <span>الزبون</span>
+</h2>
 
-            <span>CONTACT</span>
+<p>
+املأ المعلومات وسيتم فتح WhatsApp مباشرة
+</p>
 
-            <h2>
-                سجّل طلبك الآن
-            </h2>
-
-            <p>
-                املأ المعلومات وسيتم فتح WhatsApp مباشرة
-            </p>
-
-        </div>
+</div>
 
 
-        <form id="orderForm">
+<div class="form-box">
 
-            <div class="form-grid">
+<h3>
+طلب شاحنة
+</h3>
 
-                <div>
-                    <label>الاسم</label>
-                    <input
-                        type="text"
-                        id="firstName"
-                        placeholder="أدخل اسمك"
-                        required>
-                </div>
+<form onsubmit="sendWhatsApp(event)">
 
-                <div>
-                    <label>اللقب</label>
-                    <input
-                        type="text"
-                        id="lastName"
-                        placeholder="أدخل لقبك"
-                        required>
-                </div>
+<input
+id="prenom"
+type="text"
+placeholder="الاسم"
+required
+>
 
-                <div>
-                    <label>رقم الهاتف</label>
-                    <input
-                        type="tel"
-                        id="phone"
-                        placeholder="05xxxxxxxx"
-                        required>
-                </div>
+<input
+id="nom"
+type="text"
+placeholder="اللقب"
+required
+>
 
-                <div>
-                    <label>الولاية</label>
-                    <input
-                        type="text"
-                        id="wilaya"
-                        placeholder="مثال: باتنة"
-                        required>
-                </div>
+<input
+id="telephone"
+type="tel"
+placeholder="رقم الهاتف"
+required
+>
 
-                <div>
-                    <label>البلدية</label>
-                    <input
-                        type="text"
-                        id="commune"
-                        placeholder="البلدية">
-                </div>
+<input
+id="wilaya"
+type="text"
+placeholder="الولاية"
+required
+>
 
-                <div>
-                    <label>الشاحنة المطلوبة</label>
+<input
+id="commune"
+type="text"
+placeholder="البلدية"
+required
+>
 
-                    <select id="truck" required>
+<select id="activite">
 
-                        <option value="">
-                            اختر الشاحنة
-                        </option>
+<option>حرفي</option>
+<option>فلاح</option>
+<option>شركة</option>
+<option>تاجر</option>
+<option>أخرى</option>
 
-                        <option>
-                            TIRSAM Simple Cabine
-                        </option>
+</select>
 
-                        <option>
-                            TIRSAM Double Cabine
-                        </option>
+<select id="truck">
 
-                        <option>
-                            TIRSAM 3.5 T
-                        </option>
+<option>Simple Cabine - 185 مليون</option>
+<option>Double Cabine - 225 مليون</option>
+<option>3.5 T - 390 مليون</option>
+<option>6 T - 460 مليون</option>
 
-                        <option>
-                            TIRSAM 6 T
-                        </option>
+</select>
 
-                    </select>
+<textarea
+id="message"
+placeholder="ملاحظات إضافية">
+</textarea>
 
-                </div>
+<button type="submit">
+📱 إرسال الطلب عبر WhatsApp
+</button>
 
-                <div class="full">
+</form>
 
-                    <label>ملاحظات</label>
+</div>
 
-                    <textarea
-                        id="message"
-                        placeholder="اكتب أي ملاحظة أو استفسار..."></textarea>
-
-                </div>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="submit">
-
-                📱 إرسال الطلب عبر WhatsApp
-
-            </button>
-
-        </form>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- CONTACT -->
+<section id="contact">
 
-<section id="contact" class="contact">
+<div class="container">
 
-    <div class="container">
+<div class="title">
 
-        <h2>
-            GROUP TIRSAM BATNA
-        </h2>
+<h2>
+GROUP <span>TIRSAM BATNA</span>
+</h2>
 
-        <p>
-            📍 باتنة - الجزائر
-        </p>
+<p>
+📱 0564095631
+</p>
 
-        <a href="tel:0564095631">
-            📞 0564 09 56 31
-        </a>
+<p>
+🌐 group.tirsam.batna
+</p>
 
-        <br>
+</div>
 
-        <a
-            class="whatsapp"
-            href="https://wa.me/213564095631"
-            target="_blank">
-
-            💬 تواصل معنا عبر WhatsApp
-
-        </a>
-
-    </div>
+</div>
 
 </section>
-
-</main>
 
 
 <footer>
 
-    <p>
-        © 2026 GROUP TIRSAM BATNA
-    </p>
+<p>
+© 2026 <strong>GROUP TIRSAM BATNA</strong>
+</p>
+
+<p>
+Batna - Algérie
+</p>
+
+<p>
+📱 0564095631
+</p>
 
 </footer>
 
 
-<script src="script.js"></script>
+<!-- WHATSAPP RIGHT -->
+<a
+class="whatsapp"
+href="https://wa.me/213564095631"
+target="_blank">
+☏
+</a>
+
+
+<script>
+
+function chooseTruck(truck){
+
+document.getElementById("truck").value=truck;
+
+document.getElementById("reservation")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function sendWhatsApp(event){
+
+event.preventDefault();
+
+const prenom=
+document.getElementById("prenom").value;
+
+const nom=
+document.getElementById("nom").value;
+
+const telephone=
+document.getElementById("telephone").value;
+
+const wilaya=
+document.getElementById("wilaya").value;
+
+const commune=
+document.getElementById("commune").value;
+
+const activite=
+document.getElementById("activite").value;
+
+const truck=
+document.getElementById("truck").value;
+
+const message=
+document.getElementById("message").value;
+
+
+const whatsappNumber="213564095631";
+
+
+const text=
+"🚚 طلب TIRSAM BATNA%0A%0A"+
+"👤 الاسم: "+prenom+" "+nom+"%0A"+
+"📱 الهاتف: "+telephone+"%0A"+
+"📍 الولاية: "+wilaya+"%0A"+
+"🏘️ البلدية: "+commune+"%0A"+
+"💼 النشاط: "+activite+"%0A"+
+"🚛 الشاحنة: "+truck+"%0A"+
+"📝 الملاحظات: "+message;
+
+
+window.open(
+"https://wa.me/"+
+whatsappNumber+
+"?text="+
+text,
+"_blank"
+);
+
+}
+
+</script>
 
 </body>
-</html>
+</html>ج
