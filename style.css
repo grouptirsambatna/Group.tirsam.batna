@@ -1,0 +1,556 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #19b86b;
+    --dark-green: #087a46;
+    --dark: #07110c;
+    --black: #050805;
+    --white: #ffffff;
+    --gray: #a8b1ac;
+    --card: #0d1711;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Tahoma", sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 8, 5, 0.94);
+    border-bottom: 1px solid rgba(25, 184, 107, 0.2);
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.logo small {
+    display: block;
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #ddd;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.phone {
+    background: var(--green);
+    color: #041008;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.96),
+            rgba(0,0,0,0.72),
+            rgba(0,0,0,0.35)
+        ),
+        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=2000&q=90")
+        center/cover no-repeat;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 180px;
+
+    background: linear-gradient(
+        transparent,
+        var(--black)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(700px, 92%);
+    margin-right: 8%;
+}
+
+.badge {
+    display: inline-block;
+    color: var(--green);
+    border: 1px solid rgba(25,184,107,0.5);
+    padding: 7px 15px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero p {
+    color: #c7cdc9;
+    max-width: 600px;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn,
+.btn-outline {
+    padding: 14px 27px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn {
+    background: var(--green);
+    color: #041008;
+}
+
+.btn:hover {
+    background: #29d77e;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title > span {
+    color: var(--green);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    margin: 8px 0;
+}
+
+.section-title p {
+    color: var(--gray);
+}
+
+
+/* ================= TRUCKS ================= */
+
+.truck-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.truck-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.35s;
+}
+
+.truck-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(25,184,107,0.6);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.truck-image {
+    height: 310px;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.truck-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.truck-card:hover img {
+    transform: scale(1.05);
+}
+
+.category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--green);
+    color: #041008;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.truck-info {
+    padding: 25px;
+}
+
+.truck-info h3 {
+    font-size: 25px;
+}
+
+.truck-info p {
+    color: var(--gray);
+    margin: 5px 0 15px;
+}
+
+.price {
+    color: var(--green);
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.truck-info button {
+    width: 100%;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    background: var(--green);
+    color: #041008;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.truck-info button:hover {
+    background: #29d77e;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(25,184,107,0.13),
+            transparent 40%
+        );
+}
+
+.about-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.green-title {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.about h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.2;
+    margin-top: 15px;
+}
+
+.about p {
+    color: #b9c0bb;
+    font-size: 18px;
+}
+
+
+/* ================= FORM ================= */
+
+.register {
+    background: #08100b;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    background: var(--card);
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.field,
+.form-grid > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.field label,
+.form-grid label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    background: #060b07;
+    border: 1px solid #27342b;
+    color: white;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--green);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--green);
+    color: #041008;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit:hover {
+    background: #29d77e;
+    transform: translateY(-2px);
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    padding: 100px 0;
+    text-align: center;
+    background:
+        linear-gradient(
+            rgba(5,8,5,0.8),
+            rgba(5,8,5,0.95)
+        ),
+        url("https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=2000&q=80")
+        center/cover;
+}
+
+.contact h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.contact > div > a {
+    display: inline-block;
+    margin: 8px;
+    color: var(--green);
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.whatsapp {
+    border: 1px solid var(--green);
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+.whatsapp:hover {
+    background: var(--green);
+    color: #041008 !important;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #030603;
+    padding: 25px;
+    text-align: center;
+    color: #777;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 850px) {
+
+    .nav {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+        font-size: 14px;
+    }
+
+    .phone {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-content {
+        margin-right: 4%;
+    }
+
+    .truck-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-box {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    .truck-image {
+        height: 240px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        padding: 22px;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .contact h2 {
+        font-size: 32px;
+    }
+
+}
