@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>group.tirsam.batna - شاحنات TIRSAM باتنة</title>
+    <style>
+        :root {
+            --tirsam-green: #0d6e38;
+            --tirsam-dark: #074723;
+            --tirsam-accent: #25d366;
+            --light-bg: #f2f4f3;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            padding-bottom: 40px;
+        }
+
+        header {
+            background-color: var(--tirsam-green);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        .hero-banner {
+            background: linear-gradient(rgba(13, 110, 56, 0.85), rgba(7, 71, 35, 0.9)), 
+                        url('simple_cabine.jpg') center/cover;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-bottom: 25px;
+        }
+
+        .hero-banner h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .hero-banner p {
+            font-size: 14px;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e5e5e5;
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 240px;
+            background-color: #f9f9f9;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: var(--tirsam-green);
+            color: white;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--tirsam-dark);
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-subtitle {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .card-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--tirsam-green);
+            margin-bottom: 20px;
+            background: #f0f7f2;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed var(--tirsam-green);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        input {
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--tirsam-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(13, 110, 56, 0.1);
+        }
+
+        button {
+            background-color: var(--tirsam-accent);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.1s, background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:hover {
+            background-color: #1eb956;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .lang-switch {
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>group.tirsam.batna</h1>
+    <p>الموزع الرسمي لشاحنات TIRSAM - باتنة</p>
+</header>
+
+<div class="hero-banner">
+    <h2>شاحنات TIRSAM القوة والاعتمادية</h2>
+    <p>اختر نوع الشاحنة واطلبها مباشرة عبر الواتساب مع التوصيل والتأكيد السريع</p>
+</div>
+
+<div class="container">
+
+    <!-- 1. Simple Cabine -->
+    <div class="card">
+        <div class="card-img-container">
+            <span class="badge">TIRSAM</span>
+            <img src="simple_cabine.jpg" alt="Simple Cabine">
+        </div>
+        <div class="card-body">
+            <div class="card-title">
+                <span>Simple Cabine</span>
+                <span class="lang-switch">غرفة فردية</span>
+            </div>
+            <div class="card-subtitle">شاحنة تيرسام كابينة فردية متينة وعملية</div>
+            <div class="card-price">185 مليون سنتيم (1,850,000 دج)</div>
+            
+            <form onsubmit="sendWhatsApp(event, 'Truck TIRSAM Simple Cabine', '185 مليون سنتيم')">
+                <div class="form-group">
+                    <label>الاسم واللقب / Nom & Prénom</label>
+                    <input type="text" placeholder="أدخل اسمك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف / N° Téléphone</label>
+                    <input type="tel" placeholder="06XXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>الولاية / Wilaya</label>
+                    <input type="text" placeholder="أدخل ولايتك" required>
+                </div>
+                <button type="submit">طلب عبر WhatsApp 📲</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Double Cabine -->
+    <div class="card">
+        <div class="card-img-container">
+            <span class="badge">TIRSAM</span>
+            <img src="double_cabine.jpg" alt="Double Cabine">
+        </div>
+        <div class="card-body">
+            <div class="card-title">
+                <span>Double Cabine</span>
+                <span class="lang-switch">غرفة مزدوجة</span>
+            </div>
+            <div class="card-subtitle">شاحنة تيرسام كابينة مزدوجة تتسع لمزيد من الركاب</div>
+            <div class="card-price">225 مليون سنتيم (2,250,000 دج)</div>
+            
+            <form onsubmit="sendWhatsApp(event, 'Truck TIRSAM Double Cabine', '225 مليون سنتيم')">
+                <div class="form-group">
+                    <label>الاسم واللقب / Nom & Prénom</label>
+                    <input type="text" placeholder="أدخل اسمك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف / N° Téléphone</label>
+                    <input type="tel" placeholder="06XXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>الولاية / Wilaya</label>
+                    <input type="text" placeholder="أدخل ولايتك" required>
+                </div>
+                <button type="submit">طلب عبر WhatsApp 📲</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. Camion 3.5 T -->
+    <div class="card">
+        <div class="card-img-container">
+            <span class="badge">TIRSAM 3.5T</span>
+            <img src="truck_3_5t.jpg" alt="Camion 3.5 T">
+        </div>
+        <div class="card-body">
+            <div class="card-title">
+                <span>Camion 3.5 T</span>
+                <span class="lang-switch">شاحنة 3.5 طن</span>
+            </div>
+            <div class="card-subtitle">شاحنة نقل البضائع القوية والفعالة</div>
+            <div class="card-price">390 مليون سنتيم (3,900,000 دج)</div>
+            
+            <form onsubmit="sendWhatsApp(event, 'Camion TIRSAM 3.5 T', '390 مليون سنتيم')">
+                <div class="form-group">
+                    <label>الاسم واللقب / Nom & Prénom</label>
+                    <input type="text" placeholder="أدخل اسمك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف / N° Téléphone</label>
+                    <input type="tel" placeholder="06XXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>الولاية / Wilaya</label>
+                    <input type="text" placeholder="أدخل ولايتك" required>
+                </div>
+                <button type="submit">طلب عبر WhatsApp 📲</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. Camion 6 T -->
+    <div class="card">
+        <div class="card-img-container">
+            <span class="badge">TIRSAM 6T</span>
+            <img src="truck_6t.jpg" alt="Camion 6 T">
+        </div>
+        <div class="card-body">
+            <div class="card-title">
+                <span>Camion 6 T</span>
+                <span class="lang-switch">شاحنة 6 طن</span>
+            </div>
+            <div class="card-subtitle">شاحنة أوزان ثقيلة للأعمال الشاقة</div>
+            <div class="card-price">460 مليون سنتيم (4,600,000 دج)</div>
+            
+            <form onsubmit="sendWhatsApp(event, 'Camion TIRSAM 6 T', '460 مليون سنتيم')">
+                <div class="form-group">
+                    <label>الاسم واللقب / Nom & Prénom</label>
+                    <input type="text" placeholder="أدخل اسمك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف / N° Téléphone</label>
+                    <input type="tel" placeholder="06XXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>الولاية / Wilaya</label>
+                    <input type="text" placeholder="أدخل ولايتك" required>
+                </div>
+                <button type="submit">طلب عبر WhatsApp 📲</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 group.tirsam.batna - Tous droits réservés
+</footer>
+
+<script>
+function sendWhatsApp(event, model, price) {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.elements[0].value;
+    const phone = form.elements[1].value;
+    const state = form.elements[2].value;
+
+    const message = `السلام عليكم، أريد طلب شاحنة TIRSAM:\n\n` +
+                    `🚚 الموديل: ${model}\n` +
+                    `💰 السعر: ${price}\n` +
+                    `👤 الاسم: ${name}\n` +
+                    `📞 الهاتف: ${phone}\n` +
+                    `📍 الولاية: ${state}`;
+
+    const whatsappUrl = `https://wa.me/213551747038?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
+</script>
+
+</body>
+</html>
