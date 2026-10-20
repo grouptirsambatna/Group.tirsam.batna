@@ -1,76 +1,24 @@
-function selectTruck(truckName) {
-
-    document.getElementById("truck").value = truckName;
-
-    document.getElementById("register").scrollIntoView({
-        behavior: "smooth"
-    });
-
+function selectProduct(productName) {
+    document.getElementById('selectedProduct').value = productName;
+    alert('تم اختيار: ' + productName + '\nالرجاء إكمال ملء الاستمارة في الأسفل.');
+    window.scrollTo({ top: document.getElementById('orderForm').offsetTop, behavior: 'smooth' });
 }
 
+function sendToWhatsApp(event) {
+    event.preventDefault();
+    const product = document.getElementById('selectedProduct').value;
+    const name = document.getElementById('clientName').value;
+    const phone = document.getElementById('clientPhone').value;
+    const state = document.getElementById('clientState').value;
 
-document
-    .getElementById("orderForm")
-    .addEventListener("submit", function(event) {
+    if (!product) {
+        alert('الرجاء اختيار موديل الشاحنة أولاً!');
+        return;
+    }
 
-        event.preventDefault();
-
-        const firstName =
-            document.getElementById("firstName").value.trim();
-
-        const lastName =
-            document.getElementById("lastName").value.trim();
-
-        const phone =
-            document.getElementById("phone").value.trim();
-
-        const wilaya =
-            document.getElementById("wilaya").value.trim();
-
-        const commune =
-            document.getElementById("commune").value.trim();
-
-        const truck =
-            document.getElementById("truck").value;
-
-        const message =
-            document.getElementById("message").value.trim();
-
-
-        const whatsappNumber = "213564095631";
-
-
-        const text =
-`🚛 *GROUP TIRSAM BATNA*
-
-📋 *Nouvelle demande*
-
-👤 Nom: ${firstName}
-👤 Prénom: ${lastName}
-📞 Téléphone: ${phone}
-
-📍 Wilaya: ${wilaya}
-🏘️ Commune: ${commune}
-
-🚛 Véhicule demandé:
-${truck}
-
-📝 Message:
-${message}
-
-Merci.`;
-
-
-        const whatsappURL =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            encodeURIComponent(text);
-
-
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
-
-    });
+    const whatsappNumber = "213657667002";
+    const message = `السلام عليكم، أريد طلب شاحنة من موقعكم:\n\n🚚 الموديل: ${product}\n👤 الاسم: ${name}\n📞 الهاتــف: ${phone}\n📍 الولاية: ${state}`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+}
